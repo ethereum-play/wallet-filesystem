@@ -4,17 +4,19 @@ const discovery = require('discovery-swarm-web')
 const hypertrie = require('hypertrie')
 const raw = require('random-access-web')
 
-const dat = new Dat({ discovery: 'http://localhost:3472' })
+const dat = (location.host === 'ethereum-play.github.io') ?
+  new Dat()
+  : new Dat({ discovery: 'http://localhost:3472' })
 
 // -----------------------------------------------------------
 
-const RAW = require('random-access-web')
-const storage = RAW('hypertrie')
-const db = hypertrie(storage, { valueEncoding: 'json' })
+// const RAW = require('random-access-web')
+// const storage = RAW('hypertrie')
+// const db = hypertrie(storage, { valueEncoding: 'json' })
 
-db.put('hello', 'world', function () {
-  db.get('hello', console.log)
-})
+// db.put('hello', 'world', function () {
+//   db.get('hello', console.log)
+// })
 
 // -----------------------------------------------------------
 
