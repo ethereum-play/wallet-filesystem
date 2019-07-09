@@ -1,0 +1,38 @@
+{
+  "name": "wallet-filesystem",
+  "version": "0.0.0",
+  "description": "filesystem feature for a wallet",
+  "main": "src/filesystem.js",
+  "scripts": {
+    "dat": "dat share ./demo/contracts/",
+    "discovery": "discovery-swarm-web",
+    "start": "budo demo/demo.js:bundle.js --title $npm_package_name --force-default-index --open --live --ssl",
+    "build": "browserify --full-paths demo/demo.js > bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethereum-play/wallet-filesystem.git"
+  },
+  "keywords": [
+    "wallet",
+    "filesystem",
+    "iframe"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ethereum-play/wallet-filesystem/issues"
+  },
+  "homepage": "https://github.com/ethereum-play/wallet-filesystem#readme",
+  "devDependencies": {
+    "budo": "^11.6.2",
+    "dat": "^13.13.1",
+    "discovery-swarm-web": "^1.4.1"
+  },
+  "dependencies": {
+    "dat-js": "^8.0.2",
+    "hypertrie": "^3.7.0",
+    "random-access-idb": "^1.2.1",
+    "random-access-web": "^2.0.2"
+  }
+}
