@@ -31107,12 +31107,12 @@ function filesystem (rootpath = '/', mount_url) {
           // readStream.on('data', console.log)
           const results = []
           ;(function collect (i) {
+            if (results.length === data.length) return resolve(results)
             const name = data[i]
             archive.stat(path + name, (err, stat) => {
               if (stat.isDirectory()) results.push({ type: 'folder', name })
               else results.push({ type: 'file', name })
-              if (results.length === data.length) return resolve(results)
-              else collect(++i)
+              collect(++i)
             })
           })(0)
         })
